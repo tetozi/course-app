@@ -4,6 +4,7 @@ import * as courseService from '../../../../services/courseService'
 
 import { useEffect, useState } from "react";
 
+import Modal from "../../../Modal/Modal";
 import Review from "../../../Review/Review";
 import useFetchCourse from "../../../../hooks/useFetchCourse";
 import { useAuthContext } from '../../../../contexts/AuthContext'
@@ -14,10 +15,11 @@ const CoursePage = () => {
   const [reviews, setReview] = useState({})
   const { courseId } = useParams();
   const { user } = useAuthContext()
-  const [course,setCourse] = useFetchCourse(courseId)
+  const [course, setCourse] = useFetchCourse(courseId)
   const owner = course.owner
   const [message, setMessage] = useState({})
   const [numberOfPages, setNumberOfPages] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const [pageNumber, setPageNumber] = useState(0);
   const navigate = useNavigate();
@@ -34,7 +36,7 @@ const CoursePage = () => {
       });
   }, [pageNumber, courseId])
 
- //delete handler
+  //delete handler
   const deleteHandler = (e) => {
     e.preventDefault();
 
@@ -58,14 +60,12 @@ const CoursePage = () => {
     setMessage(e.target.value);
   };
 
-
-
   const sendMessage = (e) => {
     e.preventDefault()
     let token = user.token
     courseService.sendMessage(courseId, message, token)
       .then(reviews => {
-        setCourse(state => ({...state, reviews}))
+        setCourse(state => ({ ...state, reviews }))
       })
   }
   // Change page
@@ -89,11 +89,24 @@ const CoursePage = () => {
       {user._id && (user._id == owner
         ? ownerButtons
         : <div className="view">
+
           <h2 className="heading-secondary">Once you try it, you can't go back</h2>
           <textarea className="message" id="textarea" cols="30" rows="10" onChange={takeMessage}></textarea>
           <button className="sendMessage" onClick={sendMessage}>Send me </button>
         </div>
       )}
+      <div>
+        <button
+          className="openModalBtn"
+          onClick={() => {
+            setModalOpen(true);
+          }}
+        >
+          Open
+        </button>
+        {modalOpen && <Modal setOpenModal={setModalOpen} />}
+      </div>
+      
       <section >
         <div className="testimonials-container">
           <div className="testimonials">
@@ -106,16 +119,16 @@ const CoursePage = () => {
               )
               : <p className="course-err-txt">No review in database!</p>
             }
-            
+
           </div>
           <div className='myPagination'>
-              {pages.map((pageIndex) => (
-                <button className='paginationButton' key={pageIndex} onClick={() => setPageNumber(pageIndex)}>
-                  {pageIndex + 1}
-                </button>
-              ))}
+            {pages.map((pageIndex) => (
+              <button className='paginationButton' key={pageIndex} onClick={() => setPageNumber(pageIndex)}>
+                {pageIndex + 1}
+              </button>
+            ))}
 
-            </div>
+          </div>
         </div>
       </section>
 
