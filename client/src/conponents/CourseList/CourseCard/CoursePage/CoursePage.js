@@ -1,5 +1,5 @@
 import "./Course.css"
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import * as courseService from '../../../../services/courseService'
 
 import { useEffect, useState } from "react";
@@ -19,10 +19,10 @@ const CoursePage = () => {
   const owner = course.owner
   const [message, setMessage] = useState({})
   const [numberOfPages, setNumberOfPages] = useState(0);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(true);
 
   const [pageNumber, setPageNumber] = useState(0);
-  const navigate = useNavigate();
+
 
   const pages = new Array(numberOfPages).fill(null).map((v, i) => i);
 
@@ -37,21 +37,10 @@ const CoursePage = () => {
   }, [pageNumber, courseId])
 
   //delete handler
-  const deleteHandler = (e) => {
-    e.preventDefault();
-
-    courseService.remove(courseId)
-      .then((msg) => {
-        alert(msg)
-        navigate('/');
-      });
-  };
-
 
 
   const ownerButtons = (
     < div className="footer" >
-      < button className="delete-Btn" onClick={deleteHandler} > Delete</button>
       <button className="update-Btm"  ><Link to={`/update/${courseId}`}>Update</Link> </button>
     </div >
   )
@@ -72,6 +61,19 @@ const CoursePage = () => {
 
   return (
     <>
+      <div >
+        <button
+          className="openModalBtn"
+          onClick={() => {
+            setModalOpen(true);
+          }}
+        >
+          Delete
+        </button>
+
+        { modalOpen && <Modal setOpenModal={setModalOpen} />}
+      </div>
+
       <div className="coursePage">
         <div className="courseHeader"> <h2>{course.title}</h2>
         </div>
@@ -87,7 +89,8 @@ const CoursePage = () => {
 
       </div>
       {user._id && (user._id == owner
-        ? ownerButtons
+        ? ownerButtons 
+        
         : <div className="view">
 
           <h2 className="heading-secondary">Once you try it, you can't go back</h2>
@@ -95,18 +98,7 @@ const CoursePage = () => {
           <button className="sendMessage" onClick={sendMessage}>Send me </button>
         </div>
       )}
-      <div>
-        <button
-          className="openModalBtn"
-          onClick={() => {
-            setModalOpen(true);
-          }}
-        >
-          Open
-        </button>
-        {modalOpen && <Modal setOpenModal={setModalOpen} />}
-      </div>
-      
+
       <section >
         <div className="testimonials-container">
           <div className="testimonials">

@@ -1,6 +1,22 @@
+import React from "react";
 import "./Modal.css";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import * as courseService from "../../services/courseService"
 
 function Modal({ setOpenModal }) {
+  const navigate = useNavigate();
+  const { courseId } = useParams();
+
+  const deleteHandler = (e) => {
+    e.preventDefault();
+
+    courseService.remove(courseId)
+      .then((msg) => {
+        alert(msg)
+        navigate('/');
+      });
+  };
+
   return (
     <div className="modalBackground">
       <div className="modalContainer">
@@ -14,10 +30,7 @@ function Modal({ setOpenModal }) {
           </button>
         </div>
         <div className="title">
-          <h1>Are You Sure You Want to Continue?</h1>
-        </div>
-        <div className="body">
-          <p>The next page looks amazing. Hope you want to go there!</p>
+          <h1>Are You Sure You Want to Delete?</h1>
         </div>
         <div className="footer">
           <button
@@ -26,9 +39,9 @@ function Modal({ setOpenModal }) {
             }}
             id="cancelBtn"
           >
-            Cancel
+          Cancel
           </button>
-          <button>Continue</button>
+          < button className="delete-Btn" onClick={deleteHandler} > Delete</button>
         </div>
       </div>
     </div>
