@@ -19,7 +19,7 @@ const CoursePage = () => {
   const owner = course.owner
   const [message, setMessage] = useState({})
   const [numberOfPages, setNumberOfPages] = useState(0);
-  const [modalOpen, setModalOpen] = useState(true);
+  const [openModal, setOpen] = useState(false);
 
   const [pageNumber, setPageNumber] = useState(0);
 
@@ -41,8 +41,21 @@ const CoursePage = () => {
 
   const ownerButtons = (
     < div className="footer" >
+
+
+      <button
+        className="openModalBtn"
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        Delete
+      </button>
+      <Modal open={openModal}
+        onClose={() => setOpen(false)} />
       <button className="update-Btm"  ><Link to={`/update/${courseId}`}>Update</Link> </button>
     </div >
+
   )
 
   const takeMessage = (e) => {
@@ -61,18 +74,7 @@ const CoursePage = () => {
 
   return (
     <>
-      <div >
-        <button
-          className="openModalBtn"
-          onClick={() => {
-            setModalOpen(true);
-          }}
-        >
-          Delete
-        </button>
 
-        { modalOpen && <Modal setOpenModal={setModalOpen} />}
-      </div>
 
       <div className="coursePage">
         <div className="courseHeader"> <h2>{course.title}</h2>
@@ -89,8 +91,8 @@ const CoursePage = () => {
 
       </div>
       {user._id && (user._id == owner
-        ? ownerButtons 
-        
+        ? ownerButtons
+
         : <div className="view">
 
           <h2 className="heading-secondary">Once you try it, you can't go back</h2>

@@ -3,7 +3,7 @@ import "./Modal.css";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import * as courseService from "../../services/courseService"
 
-function Modal({ setOpenModal }) {
+function Modal({ open, onClose }) {
   const navigate = useNavigate();
   const { courseId } = useParams();
 
@@ -16,15 +16,16 @@ function Modal({ setOpenModal }) {
         navigate('/');
       });
   };
+  if (!open) return null
+
+
 
   return (
     <div className="modalBackground">
       <div className="modalContainer">
         <div className="titleCloseBtn">
           <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
+            onClick={onClose}
           >
             X
           </button>
@@ -34,12 +35,10 @@ function Modal({ setOpenModal }) {
         </div>
         <div className="footer">
           <button
-            onClick={() => {
-              setOpenModal(false);
-            }}
+           
             id="cancelBtn"
           >
-          Cancel
+            Cancel
           </button>
           < button className="delete-Btn" onClick={deleteHandler} > Delete</button>
         </div>
