@@ -11,6 +11,8 @@ html, body {
   grid-template-rows: auto;
   grid-gap: 20px;
   max-width: 500px;
+  margin-left: 6rem;
+  margin-top: 2rem;
 }
 
 .card-list {

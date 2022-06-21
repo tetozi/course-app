@@ -17,12 +17,14 @@ const Update = () => {
     let description = formData.get("description");
     let duration = formData.get("duration");
     let imageUrl = formData.get("imageUrl");
+    let price = formData.get('price')
 
     let course = {
       title,
       description,
       duration,
       imageUrl,
+      price
     };
 
     courseService.update(courseId, course)
@@ -65,6 +67,13 @@ const Update = () => {
             id="imageUrl"
             name="imageUrl"
             defaultValue={course.imageUrl}
+          />
+            <input
+            type="text"
+            placeholder="price"
+            id="price"
+            name="price"
+            defaultValue={course.price}
           />
           <button type="submit" value="update">
             Update
