@@ -85,7 +85,7 @@ const CoursePage = () => {
             <p className="containerContent">  {course.description} Does anyone else intentionally lose rivals every so often to stay in lower division. Way too sweaty the higher you get  </p>
             <p className="duration"> {course.duration} days</p>
 
-            <button className="update-Btm"  ><Link to={`/cart/${courseId}`}> buy it now </Link> </button>
+            <button className="update-Btm"  ><Link to={`/cart/${courseId}`}> Buy it now </Link> </button>
           </div>
         </div>
 

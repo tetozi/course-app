@@ -22,7 +22,7 @@ const CourseCard = ({course}) => {
       <button className="card button"><Link  to={`/course/${course._id}`}> Details </Link></button> 
         <div className="card-footer">
           <div className="info">
-            <div className="value">60</div>
+            <div className="value">{course.price}</div>
             <div className="type">price</div>
           </div>
           <div className="info">

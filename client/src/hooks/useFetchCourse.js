@@ -9,7 +9,6 @@ const useFetchCourse = (courseId) => {
     useEffect(() => { 
         courseService.getOne(courseId)
         .then((courseResult) => {
-          console.log(courseResult)
           setCourse(courseResult)
         })
      }, [courseId])

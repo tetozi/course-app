@@ -1,43 +1,32 @@
 .delete-Btn {
-    margin-left: 20px;
-    font-family: "Roboto", sans-serif;
-    text-transform: uppercase;
-    outline: 0;
-    background: red;
-    width: 40%;
-    padding: 10px 50px 20px;
-    border: 0;
-    padding: 15px;
-    border-radius: 7px;
-    color: #ffffff;
-    font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
-    cursor: pointer;
-  }
+  margin-left: 20px;
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  background-color: crimson;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
 
-  .update-Btm{
-    margin-left: 70px;
-    font-family: "Roboto", sans-serif;
-    text-transform: uppercase;
-    outline: 0;
-    background: green;
-    width: 40%;
-    padding: 10px 50px 20px;
-    border: 0;
-    padding: 15px;
-    border-radius: 7px;
-    color: #ffffff;
-    font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
-    cursor: pointer;
-
-  }
+.update-Btm {
+  margin-left: 20px;
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
 
 
 
-.teztarea{
+.teztarea {
   background: #dddddd;
   color: gray;
   padding: 1em;
@@ -51,22 +40,23 @@
   height: 800px;
 }
 
-.review-div{
+.review-div {
   display: flex;
   text-align: center;
 }
 
-.courseHeader{
+.courseHeader {
   text-align: center;
   text-transform: uppercase;
 }
 
-.content{
+.content {
   height: 500px;
   background-color: bisque;
   display: flex;
 }
-img{
+
+img {
   height: 400px;
   width: 500px;
   object-fit: contain;
@@ -84,22 +74,23 @@ img{
 }
 
 
-.duration{
-  text-decoration:solid;
+.duration {
+  text-decoration: solid;
   color: rgb(23, 26, 26);
   text-transform: uppercase;
   margin: 10px;
 }
 
-.footer{
+.footer {
   margin-top: 7px;
 }
 
 
-.message{
+.message {
   cursor: pointer;
 }
-.message{
+
+.message {
   background-color: black;
   color: blanchedalmond;
   border-radius: 9px;
@@ -109,11 +100,11 @@ img{
   padding: 12px;
   line-height: 1.5;
   font-size: 16px;
-  
+
 }
 
 
-.sendMessage{
+.sendMessage {
   margin-top: 12px;
   margin-left: 60px;
   width: 200px;
@@ -123,66 +114,68 @@ img{
   padding: 10px;
 }
 
-.sendMessage{
+.sendMessage {
   cursor: pointer;
 }
 
-.testimonials-containe{
+.testimonials-containe {
   display: flex;
   flex-direction: row;
   align-content: space-around;
-  
+
 }
 
 
- 
- 
- div button:hover{
-   background:aqua;
-   color: #fff;
-   text-decoration: none;
- }
-.view{
+
+
+div button:hover {
+  background: aqua;
+  color: #fff;
+  text-decoration: none;
+}
+
+.view {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
   align-content: center;
   align-items: center;
 }
-.myPagination{
 
+.myPagination {
 
   display: flex;
   margin: 0;
   padding: 0;
   background-color: #fff;
   border-radius: 20px;
-  
- }
- 
- 
- .paginationButton{
-   display: block;
-   width:40px;
-   height:40px;
-   text-align: center;
-   line-height: 4px;
-   text-decoration: none;
-   background: #fff;
-   color: #262626;
-   border-radius: 4px;
-   box-shadow: inset 0 5px 10px rgba(0,0,0, .1), 0 2px 5px rgba(0,0,0, .5);
-   margin: 5px;
-   border-radius: 12px;
- }
 
- 
- .openModalBtn {
-  width: 200px;
+}
+
+.paginationButton {
+  display: block;
+  width: 40px;
   height: 40px;
+  text-align: center;
+  line-height: 4px;
+  text-decoration: none;
+  background: #fff;
+  color: #262626;
+  border-radius: 4px;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, .1), 0 2px 5px rgba(0, 0, 0, .5);
+  margin: 5px;
+  border-radius: 12px;
+}
+
+
+.openModalBtn {
+  width: 150px;
+  height: 45px;
+  margin: 10px;
   border: none;
-  border-radius: 6px;
   background-color: crimson;
   color: white;
+  border-radius: 8px;
+  font-size: 20px;
   cursor: pointer;
 }

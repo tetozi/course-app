@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 const Update = () => {
   const navigate = useNavigate();
   const { courseId } = useParams();
-  const [course] = useFetchCourse(courseId);
+  const [course,] = useFetchCourse(courseId);
 
   const updateHandler = (e) => {
     e.preventDefault();
@@ -25,15 +25,15 @@ const Update = () => {
       imageUrl,
     };
 
-    courseService.update(courseId, course).
-      then(result => {
-        toast.success('You are successfuly updated this course')
-        navigate('/');
-      }).catch(err => {
-        toast.error(err)
+    courseService.update(courseId, course)
+    .then(result => {
+      toast.success('You are successfuly updated this course')
+      navigate('/');
+    }).catch(err => {
+      toast.error(err)
 
-      });
-  };
+    });
+  }
   return (
     <div className="login-page">
       <div className="form">

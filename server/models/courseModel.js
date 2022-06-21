@@ -31,6 +31,9 @@ const courseSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
+  price: {
+   type:String
+  },
   reviews: [
     {
       type: mongoose.Schema.ObjectId,

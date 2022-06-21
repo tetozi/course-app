@@ -76,8 +76,9 @@ export const update = async (courseId, course) => {
     let jsonResult = await res.json();
 
     if (res.ok) {
-        const courseData = jsonResult.data.course
+        const courseData = jsonResult.data.data
         let result = Object.values(courseData)
+          console.log(result)
         return result
     } else {
         const err = jsonResult.message;

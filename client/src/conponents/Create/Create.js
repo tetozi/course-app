@@ -23,11 +23,13 @@ const Create = () => {
           let description = formData.get('description');
           let imageUrl = formData.get('imageUrl');
           let duration = formData.get('duration');
+          let price = formData.get('price')
             let course = {
             title,
             description,
             imageUrl,
             duration,
+            price,
             owner
         } 
         console.log(course)
@@ -60,6 +62,12 @@ const Create = () => {
                     placeholder="duration"
                     id="duration"
                     name="duration"
+                />
+                  <input
+                    type="text"
+                    placeholder="price"
+                    id="price"
+                    name="price"
                 />
                 <button type="submit" value="Create">
                    Create
