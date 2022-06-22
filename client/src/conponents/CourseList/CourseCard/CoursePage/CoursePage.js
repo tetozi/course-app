@@ -115,6 +115,7 @@ const CoursePage = () => {
             }
 
           </div>
+         
           <div className='myPagination'>
             {pages.map((pageIndex) => (
               <button className='paginationButton' key={pageIndex} onClick={() => setPageNumber(pageIndex)}>

@@ -1,29 +1,36 @@
-.review-box{
+.review-box {
     margin: 7px;
-    width: 250px;
-    height: 450px;
+    width: 450px;
+    height: 250px;
     box-sizing: border-box;
-    background-color:aqua;
+    background-color: black;
     line-height: 29px;
     text-align: center;
-    box-shadow: inset 0 5px 10px rgba(0,0,0, .1), 0 2px 5px rgba(0,0,0, .5);
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, .1), 0 2px 5px rgba(0, 0, 0, .5);
     border-radius: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 
 
-.review-header{
-padding: 15px;
-text-transform: uppercase;
+.review-header {
+    padding: 15px;
+    text-transform: uppercase;
+    color: beige;
+}
+
+.review-text {
+    text-decoration: none;
+  font-size: 0.85em;
+  color: beige;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 
 }
 
-.review-text{
-    display: flex;
-    text-align: center;
-    padding: 20px;
-}
-
-.review-div{
+.review-div {
     display: block;
 }

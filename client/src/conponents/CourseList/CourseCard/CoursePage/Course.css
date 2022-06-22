@@ -17,11 +17,12 @@
   height: 45px;
   margin: 10px;
   border: none;
-  background-color: black;
-  color: white;
+  background-color:rgb(144, 140, 163);
+  color:#fff;
   border-radius: 8px;
   font-size: 20px;
   cursor: pointer;
+
 }
 
 
@@ -52,7 +53,7 @@
 
 .content {
   height: 500px;
-  background-color: bisque;
+  background-color: #c8ba26;
   display: flex;
 }
 
@@ -143,13 +144,12 @@ div button:hover {
 }
 
 .myPagination {
-
   display: flex;
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
+  align-items: center;
+  max-width: fit-content;
+  background-color: black;
   border-radius: 20px;
-
+  align-self: center;
 }
 
 .paginationButton {
@@ -159,12 +159,13 @@ div button:hover {
   text-align: center;
   line-height: 4px;
   text-decoration: none;
-  background: #fff;
-  color: #262626;
+  background: teal;
+  color: aliceblue;
   border-radius: 4px;
   box-shadow: inset 0 5px 10px rgba(0, 0, 0, .1), 0 2px 5px rgba(0, 0, 0, .5);
   margin: 5px;
   border-radius: 12px;
+  
 }
 
 
