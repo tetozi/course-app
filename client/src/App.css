@@ -63,7 +63,7 @@ html, body {
 .info {
   font-size: 0.9em;
   padding: 10px;
-  color: grey;
+  color:rgb(10, 10, 10);
   display: flex;
   align-items: center;
   flex-direction: column;

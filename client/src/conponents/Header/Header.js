@@ -7,16 +7,17 @@ const Header = () => {
 
     let guestNavigation = (
         <div id="guest" className='guest'>
-            <li className="headerLink"><Link to="/login" />Login</li>
-            <li className="headerLink"  ><Link to="/Register" />Register</li>
+            <button className="headerBtm"  > <Link to="/login" />Login</button>
+            <button className="headerBtm"  > <Link to="/Register" />Register</button>
         </div>
     );
 
+
     let userNavigation = (
         <div id="user" className='user'>
-            <span className='user-text'> <Link to="/user" /> {user.username}</span>
-            <button className="update-Btm"  > <Link to="/create" />Create</button>
-            <button className="update-Btm"  > <Link to="/logout" />Logout</button>
+            <div className='userBtn'> <Link to="/user" /> {user.username}</div>
+            <button className="headerBtm"  > <Link to="/create" />Create</button>
+            <button className="headerBtm"  > <Link to="/logout" />Logout</button>
         </div>
     );
     return (

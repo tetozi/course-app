@@ -16,6 +16,7 @@ import Logout from './conponents/Logout/Logout';
 import ShopingCart from './conponents/Shoping Cart/ShopingCart';
 import User from './conponents/User/User';
 import PrivateRaoutes from './conponents/PrivateRoutes/PrivateRoutes';
+import Footer from './conponents/Footer/Fotter';
 
 
 
@@ -41,8 +42,9 @@ function App() {
             <Route path="/cart/:courseId" element={<ShopingCart />} />
           </Route>
         </Routes>
-
+            
       </AuthProvider>
+      <Footer />
     </>
   );
 }

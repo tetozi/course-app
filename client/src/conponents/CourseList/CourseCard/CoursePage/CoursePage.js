@@ -11,6 +11,7 @@ import { useAuthContext } from '../../../../contexts/AuthContext'
 
 
 
+
 const CoursePage = () => {
   const [reviews, setReview] = useState({})
   const { courseId } = useParams();
@@ -127,8 +128,8 @@ const CoursePage = () => {
         </div>
       </section>
 
+ 
     </>
-
   );
 };
 

@@ -22,8 +22,7 @@ a {
 
 
 .logo {
-    margin: 0;
-    font-size: 1.45em;
+    font-size: 2.45em;
     color: rgb(0, 128, 47);
     text-transform: uppercase;
 }
@@ -36,7 +35,7 @@ a {
 
 .logo a,
 .main-nav a {
-    padding: 10px 15px;
+    padding: 4px 4px;
     text-transform: uppercase;
     text-align: center;
     display: block;
@@ -55,11 +54,19 @@ a {
 
 
 
-.user-text {
-    text-align: center;
-    margin-left: 25px;
-    text-transform: uppercase;
-    color: #f4f4f4;
+.userBtn{
+       
+        margin-left: 20px;
+        width: 150px;
+        height: 45px;
+        margin: 10px;
+        border: none;
+        border-radius: 8px;
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
+      text-transform: uppercase;
+       color: #f4f4f4;
 }
 
 .headerLink {
@@ -67,14 +74,14 @@ a {
     margin-left: 29px;
     color: #090909;
 }
-.update-Btm {
+.headerBtm {
     margin-left: 20px;
     width: 150px;
     height: 45px;
     margin: 10px;
     border: none;
-    background-color:rgb(144, 140, 163);
-    color:#fff;
+    background-color:rgb(0, 128, 47);
+    color: #f4f4f4;
     border-radius: 8px;
     font-size: 20px;
     text-align: center;
